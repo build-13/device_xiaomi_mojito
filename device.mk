@@ -184,6 +184,10 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     vendor.qti.hardware.display.allocator-service
 
+# Disable vsync for cpu rendered apps
+PRODUCT_SYSTEM_PROPERTIES += \
+    debug.cpurend.vsync=false
+
 PRODUCT_PACKAGES += \
     gralloc.default \
     gralloc.sm6150 \
