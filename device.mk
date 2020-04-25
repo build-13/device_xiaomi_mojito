@@ -178,6 +178,8 @@ PRODUCT_COPY_FILES += \
 
 # Dex
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
+PRODUCT_SYSTEM_PROPERTIES += \
+    dalvik.vm.dex2oat64.enabled=true
 
 # Device Specific Settings
 PRODUCT_PACKAGES += \
