@@ -25,7 +25,7 @@
 namespace vendor {
 namespace lineage {
 namespace livedisplay {
-namespace V2_0 {
+namespace V2_1 {
 namespace implementation {
 
 static constexpr const char* kHbmStatusPath = "/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,lcdb@ec00/regulator/regulator.63/soc:qcom,dsi-display-lab/hbm";
@@ -48,7 +48,7 @@ Return<bool> SunlightEnhancement::setEnabled(bool enabled) {
 }
 
 }  // namespace implementation
-}  // namespace V2_0
+}  // namespace V2_1
 }  // namespace livedisplay
 }  // namespace lineage
 }  // namespace vendor

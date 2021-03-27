@@ -4,7 +4,7 @@ on boot
     chmod 0660 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,lcdb@ec00/regulator/regulator.63/soc:qcom,dsi-display-lab/hbm
     chmod 0660 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,lcdb@ec00/regulator/regulator.63/soc:qcom,dsi-display-lab/anti_flicker
 
-service vendor.livedisplay-hal-2-0 /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.mojito
+service vendor.livedisplay-hal-2-1 /vendor/bin/hw/vendor.lineage.livedisplay@2.1-service.mojito
     class hal
     user system
     group system
