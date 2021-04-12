@@ -123,9 +123,6 @@ persist.vendor.quick.charge=1
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 
-# Data modules
-ro.telephony.iwlan_operation_mode=legacy
-
 # Dex2oat
 dalvik.vm.dex2oat-filter=speed
 dalvik.vm.dex2oat-threads=8
