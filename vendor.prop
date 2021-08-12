@@ -218,6 +218,7 @@ sys.qca1530=detect
 ro.vendor.qti.va_aosp.support=1
 
 # Radio
+persist.vendor.qti.telephony.vt_cam_interface=2
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.data_con_rprt=1
 persist.vendor.radio.data_ltd_sys_ind=1
