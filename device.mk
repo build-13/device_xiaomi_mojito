@@ -290,6 +290,10 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0.vendor \
     android.hardware.keymaster@4.1.vendor
 
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
