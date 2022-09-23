@@ -144,6 +144,8 @@ persist.vendor.dpmhalservice.enable=1
 # Display
 debug.egl.hw=0
 ro.hwui.render_ahead=5
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
 debug.mdpcomp.logs=0
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=0
