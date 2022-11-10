@@ -108,13 +108,18 @@ class PowerHintSession : public BnPowerHintSession {
   private:
     void updateUniveralBoostMode();
     int setSessionUclampMin(int32_t min);
-    std::string getIdString() const;
+    void tryToSendPowerHint(std::string hint);
+    int64_t convertWorkDurationToBoostByPid(const std::vector<WorkDuration> &actualDurations);
+    void traceSessionVal(char const *identifier, int64_t val) const;
     AppHintDesc *mDescriptor = nullptr;
     sp<StaleTimerHandler> mStaleTimerHandler;
     std::atomic<time_point<steady_clock>> mLastUpdatedTime;
     sp<MessageHandler> mPowerManagerHandler;
     std::mutex mSessionLock;
     std::atomic<bool> mSessionClosed = false;
+    std::string mIdString;
+    // To cache the status of whether ADPF hints are supported.
+    std::unordered_map<std::string, std::optional<bool>> mSupportedHints;
 };
 
 }  // namespace pixel
