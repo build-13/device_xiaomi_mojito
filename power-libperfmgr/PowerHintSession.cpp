@@ -362,28 +362,6 @@ void PowerHintSession::setStale() {
     }
 }
 
-void PowerHintSession::wakeup() {
-    std::lock_guard<std::mutex> guard(mSessionLock);
-
-    // We only wake up non-paused and stale sessions
-    if (mSessionClosed || !isActive() || !isTimeout())
-        return;
-    if (ATRACE_ENABLED()) {
-        std::string tag =
-                StringPrintf("wakeup.%s(a:%d,s:%d)", mIdString.c_str(), isActive(), isTimeout());
-        ATRACE_NAME(tag.c_str());
-    }
-    std::shared_ptr<AdpfConfig> adpfConfig = HintManager::GetInstance()->GetAdpfProfile();
-    int min = std::max(mDescriptor->current_min, static_cast<int>(adpfConfig->mUclampMinInit));
-    mDescriptor->current_min = min;
-    PowerSessionManager::getInstance()->setUclampMinLocked(this, min);
-    mStaleTimerHandler->updateTimer();
-
-    if (ATRACE_ENABLED()) {
-        traceSessionVal("min", mDescriptor->current_min);
-    }
-}
-
 void PowerHintSession::StaleTimerHandler::updateTimer() {
     auto now = std::chrono::steady_clock::now();
     nanoseconds staleDuration = std::chrono::nanoseconds(
