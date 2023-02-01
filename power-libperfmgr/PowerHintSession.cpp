@@ -170,12 +170,21 @@ void PowerHintSession::updateUniveralBoostMode() {
     }
 }
 
-int PowerHintSession::setSessionUclampMin(int32_t min) {
+void PowerHintSession::tryToSendPowerHint(std::string hint) {
+    if (!mSupportedHints[hint].has_value()) {
+        mSupportedHints[hint] = HintManager::GetInstance()->IsHintSupported(hint);
+    }
+    if (mSupportedHints[hint].value()) {
+        HintManager::GetInstance()->DoHint(hint);
+    }
+}
+
+int PowerHintSession::setSessionUclampMin(int32_t min, bool resetStale) {
     {
         std::lock_guard<std::mutex> guard(mSessionLock);
         mDescriptor->current_min = min;
     }
-    if (min) {
+    if (min != 0 && resetStale) {
         mStaleTimerHandler->updateTimer();
     }
     PowerSessionManager::getInstance()->setUclampMin(this, min);
@@ -325,6 +334,7 @@ ndk::ScopedAStatus PowerHintSession::sendHint(SessionHint hint) {
         ALOGE("Error: session is dead");
         return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_STATE);
     }
+    disableTemporaryBoost();
     // The amount we boost threads that have unexpected workloads
     // Consider adding this value to the powerhint.json and using that value directly
     constexpr int kRelativeBoost = 150;
@@ -506,7 +516,7 @@ void PowerHintSession::StaleTimerHandler::onTimeout() {
 
 void PowerHintSession::BoostTimerHandler::onTimeout() {
     if (mSession->disableTemporaryBoost()) {
-        mSession->setSessionUclampMin(mSession->getUclampMin());
+        mSession->setSessionUclampMin(mSession->getUclampMin(), false);
     }
 }
 
