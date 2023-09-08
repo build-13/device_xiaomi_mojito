@@ -32,7 +32,7 @@
 #include "PowerSessionManager.h"
 
 #define TAP_TO_WAKE_NODE "/sys/touchpanel/double_tap"
-#define KPROFILES_NODE "/sys/module/kprofiles/parameters/kp_mode"
+#define KPROFILES_NODE "/sys/kernel/kprofiles/kp_mode"
 
 namespace aidl {
 namespace google {
