@@ -391,6 +391,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     fstab.zram \
     fstab.qcom \
+    init.qcom.alarm.rc \
     init.qcom.power.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
