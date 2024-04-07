@@ -60,6 +60,8 @@ PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
 
 # Audio
+TARGET_LOOP_COMPRESS_READ := true
+
 PRODUCT_PACKAGES += \
     android.hardware.audio.common@2.0-util \
     android.hardware.audio.common@4.0-util \
