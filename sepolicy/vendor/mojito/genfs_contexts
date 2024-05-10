@@ -46,6 +46,3 @@ genfscon sysfs /devices/platform/soc/1d84000.ufshc/clkgate_enable               
 
 # Vibrator
 genfscon sysfs /devices/platform/soc/soc:pwm_vibrator/leds/vibrator             u:object_r:sysfs_leds:s0
-
-# EAS control
-genfscon proc /sys/kernel/sched_energy_aware                                    u:object_r:proc_sched_energy_aware:s0
