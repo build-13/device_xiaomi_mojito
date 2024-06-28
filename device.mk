@@ -16,6 +16,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # A/B
 # Inherit virtual_ab_ota product
 $(call inherit-product, \
@@ -570,6 +573,12 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libqdMetaData.system \
     libwfdaac_vendor
+
+
+# WiFi firmware symlinks
+PRODUCT_PACKAGES += \
+    firmware_wlan_mac.bin_symlink \
+    firmware_WCNSS_qcom_cfg.ini_symlink
 
 # Wlan
 PRODUCT_CFI_INCLUDE_PATHS += \
