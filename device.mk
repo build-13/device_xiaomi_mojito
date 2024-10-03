@@ -80,6 +80,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.usb.default \
     audio.r_submix.default \
+    libaudioroute.vendor \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -193,6 +194,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service
 
 PRODUCT_PACKAGES += \
+    libexif.vendor \
+    libpng.vendor:32 \
     gralloc.default \
     gralloc.sm6150 \
     hwcomposer.sm6150 \
@@ -310,6 +313,8 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libstagefright_omx.vendor \
+    libstagefright_softomx_plugin.vendor \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libarbitrarybytes \
@@ -329,6 +334,13 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 PRODUCT_PACKAGES += \
+    libion \
+    libion.vendor \
+    libvulkan \
+    libsdmcore \
+    libsdmutils \
+    libstagefright_enc_common \
+    libtinyxml \
     libcodec2_vndk.vendor \
     libcodec2_hidl@1.0.vendor
 
@@ -429,6 +441,15 @@ PRODUCT_PACKAGES += \
     libril \
     librilutils \
     librmnetctl
+
+PRODUCT_PACKAGES += \
+    libsqlite.vendor \
+    libcurl.vendor:64 \
+    libjsoncpp.vendor:64 \
+    libsqlite.vendor:64 \
+    libsysutils.vendor:64 \
+    libutilscallstack.vendor:64 \
+    libnetutils.vendor:64
 
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor \
