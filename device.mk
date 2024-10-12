@@ -126,6 +126,10 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     libdng_sdk.vendor \
     libcamera2ndk_vendor \
+    libcamera_metadata.vendor \
+    libpiex \
+    libpng.vendor \
+    liblz4.vendor\
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64
 
