@@ -570,4 +570,4 @@ PRODUCT_CFI_INCLUDE_PATHS += \
     hardware/qcom-caf/wlan/qcwcn/wpa_supplicant_8_lib
 
 # Keys
--include vendor/lineage-priv/keys/keys.mk
+-include vendor/arrow/signing/keys.mk
