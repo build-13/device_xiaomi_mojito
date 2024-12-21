@@ -7,6 +7,9 @@
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/mojito/mojito-vendor.mk)
 
+# Keys
+-include vendor/lineage-priv/keys/keys.mk
+
 # Include GSI keys
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
