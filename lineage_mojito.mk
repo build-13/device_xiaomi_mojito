@@ -28,3 +28,12 @@ PRODUCT_MODEL := Redmi Note 10
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Rising stuff
+PRODUCT_BUILD_PROP_OVERRIDES += \
+        RISING_MAINTAINER="Yuta" \
+        RISING_CHIPSET="Qualcomm Snapdragon 678"
+
+TARGET_BUILD_APERTURE_CAMERA := true
+WITH_GMS := false
+RISING_MAINTAINER := Yuta

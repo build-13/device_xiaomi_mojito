@@ -7,6 +7,9 @@
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/mojito/mojito-vendor.mk)
 
+# Keys
+-include vendor/lineage-priv/keys/keys.mk
+
 # Call the Leica Camera setup
 $(call inherit-product-if-exists, vendor/xiaomi/mojito-leicacamera/mojito-leicacamera-vendor.mk)
 
